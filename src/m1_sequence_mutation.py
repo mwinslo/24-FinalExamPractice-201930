@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Montgomery Winslow.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -32,11 +32,26 @@ def run_test_zero_changer():
     print('  Actual:  ', test1)
 
     # -------------------------------------------------------------------------
-    # TODO: 2. Write at least 2 additional tests for the
+    # DONE: 2. Write at least 2 additional tests for the
     #    zero_changer
     # function.  Try to choose some unexpected things like empty lists
     # or an empty tuple, or a list with no zeros, etc.
     # -------------------------------------------------------------------------
+    test = ([0, 0, 0], [0, 0, 0])
+    expected = ([1, 2, 3], [4, 5, 6])
+    zero_changer(test)
+    print()
+    print('Test 2:')
+    print('  Expected:', expected)
+    print('  Actual:  ', test)
+
+    test = ([1, 1, 1], [2, 2, 2])
+    expected = ([1, 1, 1], [2, 2, 2])
+    zero_changer(test)
+    print()
+    print('Test 3:')
+    print('  Expected:', expected)
+    print('  Actual:  ', test)
 
 
 def zero_changer(tuple_of_lists):
@@ -64,7 +79,7 @@ def zero_changer(tuple_of_lists):
       :type tuple_of_lists: tuple of list[int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -72,7 +87,14 @@ def zero_changer(tuple_of_lists):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  10 minutes.
     # -------------------------------------------------------------------------
-
+    total = 1
+    for k in range(len(tuple_of_lists)):
+        temp = tuple_of_lists[k]
+        for j in range(len(temp)):
+            if temp[j] == 0:
+                temp[j] = total
+                total = total + 1
+    return tuple_of_lists
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
